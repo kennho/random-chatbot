@@ -19,6 +19,10 @@ const chatBotName = 'Studious Potato';
 log.info(`My chatbot: ${chatBotName}`);
 log.info(`current environment ${process.env.NODE_ENV}`)
 
+if (process.env.NODE_ENV == 'production') {
+    server.post('/api/messages', botConnector.listen());
+}
+
 const bot = new botbuilder.UniversalBot(botConnector.listen());
 
 bot.dialog('/', [
