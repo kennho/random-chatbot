@@ -33,7 +33,7 @@ bot.dialog('/', [
             next();
         }
     }, function(session) {
-        session.send(`Hello ${session.userdata.name}, I'm ${chatBotName}`);
+        session.send(`Hello ${session.userData.name}, I'm ${chatBotName}`);
     }
 ]);
 
